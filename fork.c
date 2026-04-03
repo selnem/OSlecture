@@ -4,7 +4,6 @@ int main(int argc, char *argv[]) {
     int pid;
     int id = 0;
     pid = fork();
-    printf("pid =%d",pid);
     if (pid == 0) {
         id=id+2;
         pid = fork();
@@ -14,7 +13,7 @@ int main(int argc, char *argv[]) {
     if (pid == 0) id++;
     else {
         pid = fork();
-        if( pid == 0 ) id++;
+        if( pid == 0 ) id+=3;
     }
     printf("%d\n", id);
     fflush(stdout);
